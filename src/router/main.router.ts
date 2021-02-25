@@ -4,9 +4,9 @@ import { ResponseApi } from '../server/response_api';
 const requestApp = require('request');
 
 const mainRouter = Router();
-const mainRoouterDireciones = Router();
+/*const mainRoouterDireciones = Router();
 const mainRouterCalles= Router();
-const mainRouterDistrito = Router();
+const mainRouterDistrito = Router();*/
 const responseApi = new ResponseApi();
 const responseApi1 = new ResponseApi();
 
@@ -31,7 +31,7 @@ mainRouter.get('/distancematrix', (r: Request, w: Response) => {
   );
 });
 
-mainRoouterDireciones.get('/directions',(r:Request, w:Response)=>{
+mainRouter.get('/directions',(r:Request, w:Response)=>{
   try {
     const origins = r.query.origins;
     const destinations = r.query.destinations;
