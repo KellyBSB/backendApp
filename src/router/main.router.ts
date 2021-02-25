@@ -69,4 +69,24 @@ mainRouter.get('/geocode',(r:Request, w:Response)=>{
 
 });
 
+mainRouter.get('distrito',(r:Request,w:Request)=>{
+  const latitud = r.query.latitud;
+  const longitud = r.query.longitud;
+  const key = r.query.key;
+  requestApp(
+    `https://104.197.39.242/maps/api/geocode/json?latlng=${latitud},${longitud}&key=${key}`,
+    function(error:any, response:any, body:any){
+      console.error('error:',error);
+      console.log('statusCode:', response && response.statusCode);
+      console.log('body:', body);
+      if(!error){
+        responseApi.response(w,200,JSON.parse(body));
+      }
+      
+      
+    }
+
+  );
+});
+
 export default mainRouter;
