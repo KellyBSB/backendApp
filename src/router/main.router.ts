@@ -4,11 +4,7 @@ import { ResponseApi } from '../server/response_api';
 const requestApp = require('request');
 
 const mainRouter = Router();
-/*const mainRoouterDireciones = Router();
-const mainRouterCalles= Router();
-const mainRouterDistrito = Router();*/
 const responseApi = new ResponseApi();
-const responseApi1 = new ResponseApi();
 
 
 mainRouter.get('/', (_: Request, w: Response) => {
@@ -37,7 +33,7 @@ mainRouter.get('/directions',(r:Request, w:Response)=>{
     const destinations = r.query.destinations;
     const key = r.query.key;
     requestApp(
-      `https://maps.googleapis.com/maps/api/directions/json?origins=${origins}&destinations=${destinations}&mode=walking&key=${key}`,
+      `https://maps.googleapis.com/maps/api/directions/json?origin=${origins}&destination=${destinations}&mode=walking&key=${key}`,
       function (error:any, response:any, body:any){
         console.error('error:',error);
         console.log('statusCode:', response && response.statusCode );
