@@ -29,12 +29,12 @@ mainRouter.get('/distancematrix', (r: Request, w: Response) => {
   );
 });
 
-mainRoouterDireciones.get('/direcciones',(r:Request, w:Response)=>{
+mainRoouterDireciones.get('/directions',(r:Request, w:Response)=>{
   const origins = r.query.origins;
   const destinations = r.query.destinations;
   const key = r.query.key;
   requestApp(
-    `https://maps.googleapis.com/maps/api/directions/json?origin=${origins}&destination=${destinations}&mode=walking&key=${key}`,
+    `https://maps.googleapis.com/maps/api/directions/json?origins=${origins}&destinations=${destinations}&mode=walking&key=${key}`,
     function (error:any, response:any, body:any){
       console.error('error:',error);
       console.log('statusCode:', response && response.statusCode );
