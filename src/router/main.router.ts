@@ -74,7 +74,7 @@ mainRouter.get('distrito',(r:Request,w:Response)=>{
   const longitud = r.query.longitud;
   const key = r.query.key;
   requestApp(
-    `https://104.197.39.242/maps/api/geocode/json?latlng=${latitud},${longitud}&key=${key}`,
+    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitud},${longitud}&key=${key}`,
     function(error:any, response:any, body:any){
       console.error('error:',error);
       console.log('statusCode:', response && response.statusCode);
