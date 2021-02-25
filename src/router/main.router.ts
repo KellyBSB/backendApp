@@ -49,4 +49,24 @@ mainRouter.get('/directions',(r:Request, w:Response)=>{
   }
 
 });
+
+mainRouter.get('/geocode',(r:Request, w:Response)=>{
+  const geopositions = r.query.geopositions;
+  const key= r.query.key;
+  requestApp(
+    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${geopositions}&location_type=ROOFTOP&result_type=street_address&key=${key}`,
+    function(error:any, response:any, body:any
+    ){
+      console.error('error:', error);
+      console.log('statuscode:', response && response.statusCode);
+      console.log('body:', body);
+      if(!error){
+        responseApi.response(w,200,JSON.parse(body));
+      }
+    }
+
+  );
+
+});
+
 export default mainRouter;
