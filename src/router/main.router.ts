@@ -69,7 +69,7 @@ mainRouter.get('/geocode',(r:Request, w:Response)=>{
 
 });
 
-mainRouter.get('distrito',(r:Request,w:Request)=>{
+mainRouter.get('distrito',(r:Request,w:Response)=>{
   const latitud = r.query.latitud;
   const longitud = r.query.longitud;
   const key = r.query.key;
