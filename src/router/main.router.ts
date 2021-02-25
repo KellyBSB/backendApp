@@ -8,6 +8,8 @@ const mainRoouterDireciones = Router();
 const mainRouterCalles= Router();
 const mainRouterDistrito = Router();
 const responseApi = new ResponseApi();
+const responseApi1 = new ResponseApi();
+
 
 mainRouter.get('/', (_: Request, w: Response) => {
   responseApi.response(w, 200, {ok: true, response: 'Todo bien'});
@@ -40,7 +42,7 @@ mainRoouterDireciones.get('/directions',(r:Request, w:Response)=>{
       console.log('statusCode:', response && response.statusCode );
       console.log('body:', body);
       if(!error){
-        responseApi.response(w,200,JSON.parse(body))
+        responseApi1.response(w,200,JSON.parse(body))
       }
     }
 
