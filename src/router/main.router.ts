@@ -42,7 +42,7 @@ mainRoouterDireciones.get('/directions',(r:Request, w:Response)=>{
       console.log('statusCode:', response && response.statusCode );
       console.log('body:', body);
       if(!error){
-        responseApi1.response(w,200,JSON.parse(body))
+        responseApi.response(w,200,JSON.parse(body))
       }
     }
 
