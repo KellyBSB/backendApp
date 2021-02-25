@@ -49,7 +49,7 @@ mainRoouterDireciones.get('/directions',(r:Request, w:Response)=>{
 
     );
   } catch (error) {
-    throw new Error(error.message);
+    console.log('error directions', error);
   }
 
 });
