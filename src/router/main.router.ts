@@ -70,11 +70,10 @@ mainRouter.get('/geocode',(r:Request, w:Response)=>{
 });
 
 mainRouter.get('/distrito',(r:Request,w:Response)=>{
-  const latitud = r.query.latitud;
-  const longitud = r.query.longitud;
+  const latitudlongitud = r.query.latitudlongitud;
   const key = r.query.key;
   requestApp(
-    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitud},${longitud}&key=${key}`,
+    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitudlongitud}&key=${key}`,
     function(error:any, response:any, body:any){
       console.error('error:',error);
       console.log('statusCode:', response && response.statusCode);
