@@ -50,7 +50,7 @@ mainRouter.get('/directions',(r:Request, w:Response)=>{
 
 });
 
-mainRouter.get('/geocode',(r:Request, w:Response)=>{
+/*mainRouter.get('/geocode',(r:Request, w:Response)=>{
   const geopositions = r.query.geopositions;
   const key= r.query.key;
   requestApp(
@@ -67,9 +67,9 @@ mainRouter.get('/geocode',(r:Request, w:Response)=>{
 
   );
 
-});
+});*/
 
-mainRouter.get('distrito',(r:Request,w:Response)=>{
+mainRouter.get('geocode',(r:Request,w:Response)=>{
   const latitud = r.query.latitud;
   const longitud = r.query.longitud;
   const key = r.query.key;
