@@ -20,7 +20,7 @@ class Server {
      */
     constructor() {
         this.app = express_1.default();
-        this.port = 3000;
+        this.port = 2000;
         this.httpServer = new http_1.default.Server(this.app);
         this.io = socket_io_1.default(this.httpServer);
         this.listenSocket();

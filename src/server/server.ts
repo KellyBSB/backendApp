@@ -38,7 +38,7 @@ export default class Server {
    */
   private constructor() {
     this.app = express();
-    this.port = 3000;
+    this.port = 2000;
     this.httpServer = new http.Server(this.app);
     this.io = socketIO( this.httpServer );
     this.listenSocket();
